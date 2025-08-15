@@ -1,4 +1,7 @@
 {
+    "start_url": "/SENSI.IG/",
+"display": "standalone",
+
     "name": "IG.SENSI",
     "short_name": "IG.SENSI",
     "start_url": "https://rupesh907rg-design.github.io/IG.SENSI/",
