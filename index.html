@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG.SENSI - Free Fire Sensitivity Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">IG.SENSI</h1>
+                <p class="app-subtitle">Professional Free Fire Sensitivity Calculator</p>
+                <a href="https://instagram.com/invisiblegamer.ig" target="_blank" rel="noopener noreferrer" class="ig-button" id="igButton">
+                    <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Follow @invisiblegamer.ig
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Device Selection Section -->
+            <section class="selection-section">
+                <div class="selection-card">
+                    <h2 class="section-title">Device Configuration</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="ramSelect">RAM Capacity</label>
+                        <select id="ramSelect" class="form-select">
+                            <option value="">Select RAM Capacity</option>
+                            <option value="2GB">2GB RAM</option>
+                            <option value="3GB">3GB RAM</option>
+                            <option value="4GB">4GB RAM</option>
+                            <option value="6GB">6GB RAM</option>
+                            <option value="8GB">8GB RAM</option>
+                            <option value="12GB">12GB+ RAM</option>
+                            <option value="iPhone">iPhone</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="brandSelect">Device Brand</label>
+                        <select id="brandSelect" class="form-select" disabled>
+                            <option value="">Select Device Brand</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="Redmi">Redmi</option>
+                            <option value="POCO">POCO</option>
+                            <option value="Realme">Realme</option>
+                            <option value="OnePlus">OnePlus</option>
+                            <option value="Vivo">Vivo</option>
+                            <option value="OPPO">OPPO</option>
+                            <option value="iPhone">iPhone</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="modelGroup" style="display: none;">
+                        <label class="form-label" for="modelSelect">Device Model</label>
+                        <select id="modelSelect" class="form-select" disabled>
+                            <option value="">Select Device Model</option>
+                        </select>
+                    </div>
+
+                    <button id="calculateBtn" class="calculate-btn" disabled>
+                        Select RAM First
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <h2 class="section-title">Your Optimal Sensitivity Settings</h2>
+                        <button id="copyBtn" class="copy-btn">
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                            </svg>
+                            Copy Settings
+                        </button>
+                    </div>
+                    
+                    <div class="device-info" id="deviceInfo" style="display: none;">
+                        <div class="device-specs">
+                            <h3>Device Specifications</h3>
+                            <div class="specs-content">
+                                <span id="deviceName"></span>
+                                <span id="deviceSpecs"></span>
+                            </div>
+                        </div>
+                        <div class="performance-info">
+                            <span id="performanceNote"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="sensitivity-grid">
+                        <div class="sensitivity-item">
+                            <label>General</label>
+                            <span id="generalValue">-</span>
+                        </div>
+                        <div class="sensitivity-item">
+                            <label>Red Dot</label>
+                            <span id="redDotValue">-</span>
+                        </div>
+                        <div class="sensitivity-item">
+                            <label>2X Scope</label>
+                            <span id="twoXValue">-</span>
+                        </div>
+                        <div class="sensitivity-item">
+                            <label>4X Scope</label>
+                            <span id="fourXValue">-</span>
+                        </div>
+                        <div class="sensitivity-item">
+                            <label>Sniper Scope</label>
+                            <span id="sniperValue">-</span>
+                        </div>
+                        <div class="sensitivity-item">
+                            <label>Free Look</label>
+                            <span id="freeLookValue">-</span>
+                        </div>
+                        <div class="sensitivity-item dpi-item">
+                            <label>DPI</label>
+                            <span id="dpiValue">-</span>
+                        </div>
+                    </div>
+
+                    <div class="device-description" id="deviceDescription">
+                        <p></p>
+                    </div>
+
+                    <div class="device-tips" id="deviceTips" style="display: none;">
+                        <h3>Brand Optimization Tips</h3>
+                        <div class="tips-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="tips-section">
+                <div class="tips-card">
+                    <h2 class="section-title">Pro Gaming Tips</h2>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <h4>Test First</h4>
+                            <p>Always test sensitivity in training mode before ranked matches</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>Gradual Changes</h4>
+                            <p>Adjust settings gradually - small changes make big differences</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>Device Performance</h4>
+                            <p>Keep device temperature cool for consistent performance</p>
+                        </div>
+                        <div class="tip-item">
+                            <h4>Gaming Mode</h4>
+                            <p>Enable high FPS mode and close background apps before gaming</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 IG.SENSI - Professional Free Fire Sensitivity Calculator</p>
+            <p>Follow <a href="https://instagram.com/invisiblegamer.ig" target="_blank" rel="noopener noreferrer">@invisiblegamer.ig</a> for more gaming content</p>
+        </footer>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        Settings copied to clipboard!
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

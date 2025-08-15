@@ -1,0 +1,30 @@
+{
+    "name": "IG.SENSI",
+    "short_name": "IG.SENSI",
+    "start_url": "https://rupesh907rg-design.github.io/IG.SENSI/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ff0000",
+    "icons": [
+        {
+            "src": "icons/icon1_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon1_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon2_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/icon2_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
